@@ -8,17 +8,14 @@ const Slider = ({ siteTitle }) => (
         <img src={IMG1} alt="dsakj" />
     </div>
     <div className="slider-mid-container" >
-        <div className="slider-header-wrapper"><h3>Lorem Ipsum</h3></div>
+        <div className="slider-header-wrapper"><h3>Thacher Climbing Coalition</h3></div>
          <div className="banner-divider align-center" />
         <div className="slider-paragragh-wrapper">
             <p> 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum 
-                dolore eu fugiat nulla pariatur.
+              The Thacher Climbing Coalition works to protect and advance climbing at Thacher State Park.
             </p>
         </div>
-        <div className="slider-footer-wrapper"><button> I AM A BUTTON</button></div>
+        <div className="slider-footer-wrapper"><button>Join the TCC </button></div>
     </div>
     <div className="slider-img-container" >
         <img src={IMG2} alt="dsajk" />

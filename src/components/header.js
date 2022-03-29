@@ -1,42 +1,56 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import Logo from '../images/tcc-logo.jpg'
+import Logo from '../images/LOGO.jpg'
+import Logo2 from '../images/tcc-logo.jpg'
 import Test from '../images/test.png'
 import { BiDonateHeart } from "react-icons/bi";
 
 
-const Routes = [
-  "Membership",
-  "Visit Thacher",
-  "Blog",
-  "About Us",
-  "Contact Us"
-  /*"Donate",*/
-]
-
-
-const Header = ({ siteTitle }) => (
+const Header = (props) => (
   <div className="site-header" style={{  background: `#fff`  }} >
     <div className="site-header-left">
-      <img src={Logo} alt="TCC"/>
+     
+      <a style={{height: '100%'}} href="/"><img src={Logo2} alt="TCC"/></a>
     </div>
     <div className="site-header-right">
-      {Routes.map((route) => {
-        return <div className="header-button-wrapper"> {route} </div>
+      {props.SitePages.map((page) => {
+        console.log(props)
+        if('Donate' !== page.node.title ){
+          return <div className="header-button-wrapper">
+                  <a style={{ height: '100%',
+                              margin: '0 auto',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              color: '#000' }} href={page.node.uri }>
+                      {page.node.title}
+                    </a> 
+                  </div>
+        }
       })}
-      <div className="site-header-square" >
+      <a  href="/donate">
+      <div className="nav-last-btn-wrapper">
+        <button className="nav-start-planning">
+          <img src={Test} alt="TCC"/> Donate
+        </button>
+      </div>
+      </a>
+      {/*<div className="site-header-square" >
         <div className="site-header-square-content" >
           <img src={Test} alt="TCC"/>
-          {/*<BiDonateHeart style={{color: 'white', fontSize: '35px'}} />*/}
+          Donate
+          {/*<BiDonateHeart style={{color: 'white', fontSize: '35px'}} />*
         </div>
-      </div>
+      </div>*/}
     </div>
     
   
   </div>
 )
 
+
+/*
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
@@ -44,7 +58,7 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
-
+*/
 
 /**
 <div style={{ margin: `0 auto`,

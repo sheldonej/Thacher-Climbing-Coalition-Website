@@ -18,9 +18,20 @@ import Footer from "./footer"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
-      site {
+       site {
         siteMetadata {
           title
+        }
+      }
+      allWpPage {
+        edges {
+          node {
+            id
+            title
+            slug
+            content
+            uri
+          }
         }
       }
     }
@@ -28,9 +39,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className="page-wrapper">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header SitePages={data.allWpPage.edges} />
       <main>{children}</main>
-      <Footer  />
+      <Footer SitePages={data.allWpPage.edges} />
     </div>
 
   )

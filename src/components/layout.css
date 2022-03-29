@@ -628,10 +628,18 @@ pre tt:after {
   margin: 0px;
 }
 
-
-.site-header-left img{
-  height: 125px;
+.site-header-left a{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
   margin: 0px;
+}
+.site-header-left img{
+  /*height: 110%;*/
+  height: 200%;
+  margin: 0px;
+  cursor: pointer;
 }
 
 .site-header-right{
@@ -656,8 +664,8 @@ pre tt:after {
   width: 90%;
   /*background: #2b2b2b;*/
   /*background: #80da93;*/
-  background: radial-gradient(#37f35f, #3fa455);
-  /*background: radial-gradient(#02d6d6, #05a2a2); */
+  /*background: radial-gradient(#37f35f, #3fa455);*/
+  background: radial-gradient(#02d6d6, #05a2a2); 
   position: absolute;
   border-radius: 50% 0% 50% 50%;
   top: 0px;
@@ -769,9 +777,29 @@ pre tt:after {
 }
 
 .slider-footer-wrapper button {
-  height: 50px;
-  width: 200px;
-  border-radius: 25px;
+  height: 40px;
+  width: 175px;
+  border-radius: 5px;
+  background-color: #000000;
+  /*background-image: radial-gradient(  #414141 0%, #000000 74%);*/
+  background: radial-gradient(#ffffff, #fdfdfd);
+  color: #01b7b7;
+  border: none;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+              rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+              rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+              rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;*/
+   /*           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;*/
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.05s ease-in-out 0.05s;
+}
+
+.slider-footer-wrapper button:hover {
+  background: radial-gradient(#01b7b7, #05a2a2);
+  color: #fff;
 }
 
 
@@ -800,6 +828,11 @@ pre tt:after {
   display: flex;
   flex-flow: column;
   padding: 0px 15px 0px 15px;
+
+  border-top: 7px solid;
+  /*border-color: #01b7b7;*/
+  border-color: #0000001f;
+ 
 }
 
 .home-content-section {
@@ -820,7 +853,7 @@ pre tt:after {
 }
 
 .content-box {
-  margin: 70px 0px 70px 0px;
+  margin: 70px 0px 0px 0px;
   width: 270px;
 
   height: auto;
@@ -845,7 +878,7 @@ pre tt:after {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid #45f1e9;
+  border: 2px solid #01b7b7;
   background: rgb(240, 240, 240);
   position: absolute;
 
@@ -868,7 +901,7 @@ pre tt:after {
 }
 
 .tshirt-banner {
-  background: #303030;
+  background: #1c1c1c;
   height: auto;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -955,7 +988,7 @@ pre tt:after {
 
 .footer-socials-wrapper {
   height: 100%;
-  min-width: 100px;
+  min-width: 125px;
   display: flex;
   align-items: center;
 
@@ -971,7 +1004,23 @@ pre tt:after {
   height: 100%;
   display: flex;
   flex-flow: column;
+  
+  margin: 0px 5px;
+
 }
+
+.footer-top-content input {
+  background: #1c1c1c;
+  border: none;
+  width: 100%;
+  box-shadow: inset 0px 0px 2px 0px #ffffff;
+  height: 40px;
+  font-size: 16px;
+  padding: 0px 5px;
+  color: #fdfdfd;
+}
+
+
 
 footer {
   clear: both;
@@ -987,4 +1036,182 @@ footer {
   min-height: 100vh;
   display:flex; 
   flex-direction:column; 
+}
+
+
+.page-banner {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page-banner img{
+  width: 100%;
+  height: auto;
+  padding-top: 75px;
+}
+
+.page-banner-title {
+  position: absolute;
+  left: 25px;
+  font-size: 36px;
+}
+
+
+.wp-page-wrapper {
+  margin: 40px;  
+}
+
+.subscribe-row-wrap {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 80%;
+}
+.subscribe-col-wrap {
+  display: flex;
+  flex-flow:  row;
+  height: 100%;
+  width: 100%;
+}
+
+.subscribe-col-wrap button{
+
+  height: 120px;
+  border-radius: 0px 60px 60px 0px;
+  border:  none;
+}
+
+.two-col-grid-wrap {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.merch-box {
+  height: 400px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.merch-box img{
+  height: 300px;
+}
+
+.merch-box button {
+  width: 100%;
+  height: 50px;
+}
+
+.mini-post-wrapper {
+  height: auto;
+  width: 400px;
+  margin: 10px auto 30px auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+
+}
+
+.mini-post-wrapper img{
+  height: 300px;
+  width: 400px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.mini-post-wrapper h3{
+  width: 100%;
+  color: #01b7b7;
+}
+
+
+.mini-post-wrapper button {
+  width: 100%;
+  height: 50px;
+}
+
+.home-content-section a{
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.wp-container {
+  height: auto;
+  width: auto;
+}
+.wp-container img {
+  height: 50%;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+
+
+.nav-last-btn-wrapper {
+  height: 100%;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px;
+  border: none;
+}
+
+.nav-start-planning {
+  height: 40px;
+  width: auto;
+  padding: 0px 10px 0px 10px;
+  border-radius: 20px;
+  /*border: 2px rgb(44, 44, 44) solid;*/
+  font-size: 15px;
+  border: none;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  font-family: 'Varela Round', sans-serif !important;
+
+  /*background: radial-gradient(ellipse,  #4a88e8 0%, #5144ff 100%);*/
+  /*background: radial-gradient(ellipse,  #5144ff 0%, #3a2cff 100%);*/
+  background: radial-gradient(#02d6d6, #05a2a2);
+  transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+  white-space: nowrap;
+  cursor: pointer;
+
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-last-btn-wrapper img {
+  height: 65%;
+  margin: 0px 5px 0px 0px;
+}
+
+.nav-start-planning:hover,
+.nav-last-btn-wrapper:hover {
+  font-size: 17px;
+  
+
+}
+
+.nav-start-planning:hover {
+  height: 45px;
+  padding: 0px 15px 0px 15px;
+  border-radius: 22.5px;
+
 }

@@ -48,30 +48,31 @@ export default function Home({ data }) {
       <Slider />
         <div className="home-content" >
               <div className="home-content1" >
-                <div className="slider-header-wrapper"><h3>Lorem Ipsum</h3></div>
+                <div className="slider-header-wrapper"><h3>Get Involved</h3></div>
                  <div className="banner-divider align-center"  />
                   <div className="flow-row" >
-
-                      <div className="home-content-section" >
-                        <div className="content-box" >
-                          <div className="content-box-circ" ><BiWorld style={{/*color: 'red',*/ fontSize: '35px'}} /></div>
-                          <h4>Membership</h4>
-                          <p>Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Vel eros donec ac odio. Vestibulum sed arcu non odio euismod lacinia at quis risus. In massa tempor nec feugiat. Est ultricies integer quis auctor elit sed. Nec feugiat nisl pretium fusce id velit. Adipiscing tristique risus nec feugiat in. Rhoncus est pellentesque elit ullamcorper dignissim. Pulvinar elementum integer enim neque.</p>
-                        </div>
-                      </div>
-
                       <div className="home-content-section" >
                         <div className="content-box" >
                               <div className="content-box-circ" ><BiGroup style={{/*color: 'red',*/ fontSize: '35px'}} /></div>
-                          <h4>About Us</h4>
-                          <p>Fermentum leo vel orci porta non pulvinar neque. Nullam eget felis eget nunc. Interdum velit euismod in pellentesque massa placerat duis ultricies. At varius vel pharetra vel turpis nunc eget. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Varius vel pharetra vel turpis nunc eget lorem dolor sed.</p>
+                          <h3 style={{padding: '0px 0px 10px 0px'}}>About Us</h3>
+                          <p>We are a volunteer group of climbers who manage and advocate for climbing at Thacher State Park. Our mission is to transform the Helderberg Escarpment into a premier rock and ice climbing destination in the Northeast and to have all the cliff lands protected for generations to come, serving all user groups, and nourishing the physical and mental health of our local community.</p>
+                        </div>
+                      </div>
+                      <div className="home-content-section" >
+                        <div className="content-box" >
+                          <div className="content-box-circ" ><BiWorld style={{/*color: 'red',*/ fontSize: '35px'}} /></div>
+                          <h3 style={{padding: '0px 0px 10px 0px'}}>Membership</h3>
+                          <p style={{margin: '0px 0px 30px 0px'}}><text style={{fontWeight: 'bold'}}>THANK YOU</text> for supporting climbing at Thacher.</p>
+                          <p style={{margin: '0px 0px 30px 0px'}}>Your membership also supports the Access Fund and their mission!</p>
+                          <p style={{margin: '0px 0px 30px 0px'}}>Joint TCC and Access Fund Membership</p>
                         </div>
                       </div>
                       <div className="home-content-section" >
                         <div className="content-box" >
                           <div className="content-box-circ" ><BiCar style={{/*color: 'red',*/ fontSize: '35px'}} /></div>
-                          <h4>Visit Thacher</h4>
-                          <p>Mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Enim lobortis scelerisque fermentum dui faucibus. Gravida cum sociis natoque penatibus et. A lacus vestibulum sed arcu non odio euismod. Lorem ipsum dolor sit amet. Aliquet lectus proin nibh nisl condimentum id venenatis. Condimentum lacinia quis vel eros donec. Risus nullam eget felis eget nunc lobortis mattis aliquam.</p>
+                          <h3 style={{padding: '0px 0px 10px 0px'}}>Visit Thacher</h3>
+                          <a style={{fontWeight: 'bold', margin: '0px 0px 30px 0px'}} href="http://climbthacher.org/wp-content/uploads/2021/03/Thacher2021ClimbingApplication.pdf">The 2021 Climbing Application is now live!!</a>
+                          <p p style={{margin: '0px 0px 30px 0px'}}>Make sure to complete your free annual climbing permit application before your first visit!</p>
                         </div>
                       </div>
                     </div>
@@ -93,27 +94,36 @@ export default function Home({ data }) {
                   </div>
                   <div className="home-content3" />
         </div>
-
-      {data.allWpPost.edges.map(({ node }) => (
-        <div>
-          <p>{node.title}</p>
+      <div className="slider-header-wrapper"><h3>Most Recent Posts</h3></div>
+      <div className="banner-divider align-center"  />
+      <div className="two-col-grid-wrap">
+      {data.allWpPost.edges.slice(0, 4).map(({ node }) => (
+        <div className="mini-post-wrapper">
+          {/*<img src={node.featuredImage.node.mediaItemUrl}/>*/}
+          <h3>{node.title}</h3>
           <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
         </div>
       ))}
+      </div>
     </PageLayout>
-  )
+  
+  ) 
 }
 
 export const pageQuery = graphql`
   query {
     allWpPost(sort: { fields: [date] }) {
       edges {
-        node {
-          title
-          excerpt
-          slug
+      node {
+        title
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
         }
       }
+    }
     }
   }
 `

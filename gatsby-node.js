@@ -3,9 +3,22 @@ const path = require(`path`);
 
 exports.createPages = async ({graphql, actions, reporter}) => {
   const {createPage} = actions;
-  const BlogPostTemplate = path.resolve('./src/templates/BlogPost.js');
+  const PostTemplate = path.resolve('./src/templates/post-template.js');
+  const PageTemplate = path.resolve('./src/templates/page-template.js');
+
   const result = await graphql(`
     {
+      allWpPage {
+        edges {
+          node {
+            id
+            title
+            slug
+            content
+            uri
+          }
+        }
+      }
       allWpPost {
         edges {
           node {
@@ -28,8 +41,17 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   BlogPosts.forEach(post => {
     createPage({
       path: `/post/${post.node.slug}`,
-      component: BlogPostTemplate,
+      component: PostTemplate,
       context: post.node, 
+    });
+  });
+
+ const SitePages = result.data.allWpPage.edges;
+  SitePages.forEach(page => {
+    createPage({
+      path: page.node.uri,
+      component: PageTemplate,
+      context: page.node, 
     });
   });
 };
