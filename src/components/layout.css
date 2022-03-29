@@ -1169,6 +1169,18 @@ footer {
   align-items: center;
   margin: 0px 15px;
   border: none;
+  text-decoration: none;
+}
+
+.nav-last-btn-wrapper a{
+
+  text-decoration: none;
+}
+
+
+.nav-last-btn-wrapper button{
+
+  border: none;
 }
 
 .nav-start-planning {

@@ -29,13 +29,15 @@ const Header = (props) => (
                   </div>
         }
       })}
-      <a  href="/donate">
+      
       <div className="nav-last-btn-wrapper">
+      <a  href="/merchandise">
         <button className="nav-start-planning">
           <img src={Test} alt="TCC"/> Donate
         </button>
+        </a>
       </div>
-      </a>
+   
       {/*<div className="site-header-square" >
         <div className="site-header-square-content" >
           <img src={Test} alt="TCC"/>
