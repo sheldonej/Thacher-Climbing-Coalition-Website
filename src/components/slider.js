@@ -4,7 +4,7 @@ import IMG2 from '../images/placeholder2.jpg'
 
 const Slider = ({ siteTitle }) => (
   <div className="slider-wrapper" >
-    <div className="slider-img-container">
+    <div className="slider-img-container slider-left">
         <img src={IMG1} alt="dsakj" />
     </div>
     <div className="slider-mid-container" >
@@ -15,9 +15,9 @@ const Slider = ({ siteTitle }) => (
               The Thacher Climbing Coalition works to protect and advance climbing at Thacher State Park.
             </p>
         </div>
-        <div className="slider-footer-wrapper"><button>Join the TCC </button></div>
+        <div className="slider-footer-wrapper">  <a href="/subscribe"><button>Join the TCC </button></a></div>
     </div>
-    <div className="slider-img-container" >
+    <div className="slider-img-container slider-right" >
         <img src={IMG2} alt="dsajk" />
     </div>
     

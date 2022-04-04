@@ -36,7 +36,7 @@ export default function PostsContent({ props }) {
         <div className="mini-post-wrapper">
           <img src={node.featuredImage.node.mediaItemUrl}/>
           <h3>{node.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+          <div dangerouslySetInnerHTML={{ __html: node.content }} />
         </div>
       ))}
       </div>

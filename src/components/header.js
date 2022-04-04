@@ -15,26 +15,39 @@ const Header = (props) => (
     </div>
     <div className="site-header-right">
       {props.SitePages.map((page) => {
-        console.log(props)
         if('Donate' !== page.node.title ){
-          return <div className="header-button-wrapper">
-                  <a style={{ height: '100%',
-                              margin: '0 auto',
-                              display: 'flex',
-                              justifyContent: 'center',
-                              alignItems: 'center',
-                              color: '#000' }} href={page.node.uri }>
-                      {page.node.title}
+          return page.node.slug === 'get-involved-1' || 
+                 page.node.slug === 'get-involved-2' || 
+                 page.node.slug === 'get-involved-3' ? <></> : 
+                 <div className="header-button-wrapper">
+                    <a style={{ height: '100%',
+                                margin: '0 auto',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                color: '#000' }} href={page.node.uri }>
+                      <div class="button-default button-slanted">
+                        <span class="button-slanted-content">{page.node.title}</span>
+                      </div>
                     </a> 
                   </div>
         }
       })}
-      
-      <div className="nav-last-btn-wrapper">
-      <a  href="/merchandise">
-        <button className="nav-start-planning">
-          <img src={Test} alt="TCC"/> Donate
-        </button>
+      <div className="header-button-wrapper">
+        <a style={{ height: '100%',
+                    margin: '0 auto',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: '#000' }} href="/posts">
+          <div class="button-default button-slanted">
+            <span class="button-slanted-content">Blog</span>
+          </div>
+        </a> 
+      </div>
+      <div className="nav-last-btn-wrapper-big-screen">
+        <a  href="/merchandise">
+          <button class="glow-on-hover" type="button" style={{fontSize: '16px', padding: '10px', fontWeight: 'bolder'}}> <img src={Test} alt="TCC"/> Donate Today!</button>
         </a>
       </div>
    
@@ -46,6 +59,11 @@ const Header = (props) => (
         </div>
       </div>*/}
     </div>
+    <div className="nav-last-btn-wrapper-small-screen">
+        <a  href="/merchandise">
+          <button class="glow-on-hover" type="button" style={{fontSize: '16px', padding: '10px', fontWeight: 'bolder'}}> <img src={Test} alt="TCC"/> Donate Today!</button>
+        </a>
+      </div>
     
   
   </div>

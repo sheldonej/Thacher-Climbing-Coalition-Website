@@ -26,6 +26,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
             title
             slug
             excerpt
+            content
           }
         }
       }
@@ -48,10 +49,13 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
  const SitePages = result.data.allWpPage.edges;
   SitePages.forEach(page => {
-    createPage({
-      path: page.node.uri,
-      component: PageTemplate,
-      context: page.node, 
-    });
-  });
+    if(!(page.node.slug === 'get-involved-1' || 
+        page.node.slug === 'get-involved-2' || 
+        page.node.slug === 'get-involved-3')){
+        createPage({
+          path: page.node.uri,
+          component: PageTemplate,
+          context: page.node, 
+        });
+   }});
 };

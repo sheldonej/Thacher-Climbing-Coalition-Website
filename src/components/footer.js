@@ -4,15 +4,11 @@ import { SocialIcon } from 'react-social-icons';
 const Footer = (props) => (
     <footer >
         <div className="footer-top" >
-          <div className="footer-top-content" >
-            <h4 style={{paddingBottom: '10px', color: 'white'}}>Stay Connected</h4>
-                    <div className="subscribe-col-wrap">
-            <div className="subscribe-row-wrap">
-            <input  placeholder="Enter Email Adress" />
-            <input  placeholder="Enter First Name" />
-            <input  placeholder="Enter Last Name" />
-            </div>
-            <button >Subscribe</button>
+          <div className="footer-sub-content" >
+            <div className="subscribe-col-wrap">
+            <a href="/subscribe">
+            <button class="glow-on-hover" type="button" style={{fontSize: '2rem', padding: '20px'}}>Become a TCC Member Today!</button>
+            </a>
             </div>
           </div>
           <div className="footer-top-content" >
@@ -31,14 +27,12 @@ const Footer = (props) => (
         <div className="footer-divider align-center" style={{marginTop: `25px`}} />
         <div className="footer-bottom" >
           <div className="footer-bottom-content" >
-            Copyright © {new Date().getFullYear()}, Thacher Climbing Coalition &nbsp;|&nbsp;
-            This website is a&nbsp;<div style={{ display: 'flex', color: 'red'}} >RCOS</div>&nbsp;project
+           <div> Copyright © {new Date().getFullYear()}, Thacher Climbing Coalition &nbsp;</div><div>|&nbsp;</div>
+           <div style={{display: 'flex'}}> This website is a&nbsp;<div style={{ display: 'flex', color: 'red'}} >RCOS</div>&nbsp;project</div>
           </div>
           <div className="footer-socials-wrapper"> 
-            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="https://gmail.com/" />  
-            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="https://twitter.com/" />
-            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="https://facebook.com/" />
-            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="https://instagram.com/" /> 
+            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="mailto:info@climbthacher.org" />  
+            <SocialIcon style={{width: `25px`, height: `25px`, borderRadius: '50%' }} url="https://www.facebook.com/ThacherClimbingCoalition/" />
           </div>
         </div>
     </footer>
