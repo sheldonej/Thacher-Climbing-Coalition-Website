@@ -18,7 +18,7 @@ const Slider = ({ siteTitle }) => (
         <div className="slider-footer-wrapper">  <a href="/subscribe"><button>Join the TCC </button></a></div>
     </div>
     <div className="slider-img-container slider-right" >
-        <img src={IMG2} alt="dsajk" />
+        <img src="https://staging.climbthacher.org/wp-content/uploads/2018/10/20171007-BWP_5101-2.jpg" alt="dsajk" />
     </div>
     
 

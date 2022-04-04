@@ -8,7 +8,7 @@ const NotFoundPage = () => (
   <Layout>
     <Seo title="404: Not found" />
     <div className="page-banner">
-        <img alt="banner-pic" src={BannerPic}/>
+        <img alt="banner-pic" src="https://staging.climbthacher.org/wp-content/uploads/2018/10/20171007-BWP_5101-2.jpg"/>
         <div className="page-banner-title"></div>
     </div>
      <div className="page-404-wrapper">

@@ -9,7 +9,7 @@ const BlogPostTemplate = (props)  => (
       <SEO title={props.pageContext.title}
           description={props.pageContext.excerpt} />
       <div className="page-banner">
-        <img alt="banner-pic" src={BannerPic}/>
+        <img alt="banner-pic" src="https://staging.climbthacher.org/wp-content/uploads/2018/10/20171007-BWP_5101-2.jpg"/>
         <div className="page-banner-title-post">{props.pageContext.title}</div>
       </div>
       <div
