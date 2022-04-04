@@ -75,18 +75,18 @@ export default function Home({ data }) {
       <div className="banner-divider align-center"  />
       <div className="two-col-grid-wrap">
       {data.allWpPost.edges.slice(0, 4).map(({ node }) => {
-        return node.featuredImage ?
-        <div className="mini-post-wrapper">
-          <img src={node.featuredImage.node.mediaItemUrl}/>
-          <h3><a href={'/post/' + node.slug}>{node.title }</a></h3>
-          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        </div>  
-        :
-        <div className="mini-post-wrapper">
-      
-        <h3><a href={'/post/' + node.slug}>{node.title}</a></h3>
-        <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-      </div>  
+        try{
+        return <div className="mini-post-wrapper">
+                  <img src={node.featuredImage.node.mediaItemUrl}/>
+                  <h3><a href={'/post/' + node.slug}>{node.title }</a></h3>
+                  <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </div>  
+        } catch(e){
+        return <div className="mini-post-wrapper">
+                <h3><a href={'/post/' + node.slug}>{node.title}</a></h3>
+                <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>  
+        }
       })}
       </div>
     </PageLayout>
